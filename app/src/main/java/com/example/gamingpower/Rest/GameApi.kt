@@ -29,5 +29,3 @@ interface GiveawaysService {
     }
 }
 
-class ServiceApi {
-}

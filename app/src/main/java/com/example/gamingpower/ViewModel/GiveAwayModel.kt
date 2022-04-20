@@ -13,7 +13,6 @@ import com.example.gamingpower.Utils.SortType
 import com.example.gamingpower.Utils.GiveAwayState
 import kotlinx.coroutines.*
 
-
 class GiveawaysViewModel(
     private val Rest : GiveawaysRepository,
     private val databaseRepo: DatabaseRepository,

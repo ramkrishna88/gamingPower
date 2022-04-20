@@ -2,6 +2,7 @@ package com.example.gamingpower.DataBase
 
 
 import com.example.gamingpower.Model.GiveAwayItem
+import com.example.gamingpower.Rest.GiveawaysService
 
 interface DatabaseRepository {
     suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>)
@@ -12,7 +13,7 @@ interface DatabaseRepository {
 }
 
 class DatabaseRepositoryImpl(
-    private val giveawaysDatabase: GiveawaysDAO
+    private val giveawaysDatabase: GiveawaysService
 ) : DatabaseRepository {
 
     override suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>) =
