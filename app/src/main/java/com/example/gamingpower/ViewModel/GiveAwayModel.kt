@@ -11,8 +11,10 @@ import com.example.gamingpower.Rest.GiveawaysRepository
 import com.example.gamingpower.Utils.PlatformType
 import com.example.gamingpower.Utils.SortType
 import com.example.gamingpower.Utils.GiveAwayState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 
+@HiltViewModel
 class GiveawaysViewModel(
     private val Rest : GiveawaysRepository,
     private val databaseRepo: DatabaseRepository,
@@ -27,7 +29,7 @@ class GiveawaysViewModel(
 
     private val _sortedGiveaways: MutableLiveData<GiveAwayState> =
         MutableLiveData(GiveAwayState.LOADING)
-    val giveaways: LiveData<GiveAwayState> get() = _sortedGiveaways
+    val giveAway: LiveData<GiveAwayState> get() = _sortedGiveaways
 
     fun getSortedGiveaways(sortBy: SortType = SortType.DATE) {
         viewModelScope.launch(ioDispatcher) {

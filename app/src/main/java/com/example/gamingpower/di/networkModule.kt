@@ -8,6 +8,8 @@ import com.example.gamingpower.Rest.GiveawaysService
 import com.example.gamingpower.Rest.GiveawaysService.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
@@ -15,12 +17,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 @Module
-
+@InstallIn(SingletonComponent::class)
 class NetworkModule {
 
     @Provides
+    @Singleton
     fun ProvideNetworkService(okHttpClient: OkHttpClient) = Retrofit
         .Builder()
         .baseUrl(BASE_URL)
@@ -31,6 +35,7 @@ class NetworkModule {
 
 
     @Provides
+    @Singleton
     fun providesOkHttpClient() = OkHttpClient
         .Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {

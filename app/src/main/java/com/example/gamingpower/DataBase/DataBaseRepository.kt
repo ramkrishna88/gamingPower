@@ -15,24 +15,24 @@ interface DatabaseRepository {
 class DatabaseRepositoryImpl(
     private val giveawaysDatabase: GiveawaysService
 ) : DatabaseRepository {
-
-    override suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>) =
-        giveawaysDatabase.insertGiveaways(newGiveaways)
+    override suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>) {
+        TODO("Not yet implemented")
+    }
 
     override suspend fun getAllGiveaways(): List<GiveAwayItem> {
-        return giveawaysDatabase.getAllGiveaways()
+        TODO("Not yet implemented")
     }
 
     override suspend fun getGiveawaysById(searchId: Int): GiveAwayItem {
-        return giveawaysDatabase.getGiveawaysById(searchId)
+        TODO("Not yet implemented")
     }
 
     override suspend fun getGiveawaysByPlatform(platform: String): List<GiveAwayItem> {
-        return giveawaysDatabase.getGiveawaysByPlatform(platform)
+        TODO("Not yet implemented")
     }
 
     override suspend fun deleteGiveaways(giveaways: List<GiveAwayItem>) {
-        return giveawaysDatabase.deleteGiveaways(giveaways)
+        TODO("Not yet implemented")
     }
 
 }

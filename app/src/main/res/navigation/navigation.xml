@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/baseFragment">
+
+    <fragment
+        android:id="@+id/baseFragment"
+        android:name="com.example.gamingpower.Views.BaseFragment"
+        android:label="BaseFragment" >
+        <action
+            android:id="@+id/action_baseFragment_to_giveawaysFragment"
+            app:destination="@id/giveawaysFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giveawaysFragment"
+        android:name="com.example.gamingpower.Views.GiveawaysFragment"
+        android:label="GiveawaysFragment" >
+        <action
+            android:id="@+id/action_giveawaysFragment_to_ps4GiveawaysFragment"
+            app:destination="@id/ps4GiveawaysFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PCGiveawaysFragment"
+        android:name="com.example.gamingpower.Views.PCGiveawaysFragment"
+        android:label="PCGiveawaysFragment" />
+    <fragment
+        android:id="@+id/ps4GiveawaysFragment"
+        android:name="com.example.gamingpower.Views.Ps4GiveawaysFragment"
+        android:label="Ps4GiveawaysFragment" >
+        <action
+            android:id="@+id/action_ps4GiveawaysFragment_to_PCGiveawaysFragment"
+            app:destination="@id/PCGiveawaysFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.gamingpower.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

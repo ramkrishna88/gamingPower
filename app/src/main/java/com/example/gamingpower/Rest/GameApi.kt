@@ -1,8 +1,11 @@
 package com.example.gamingpower.Rest
 import com.example.gamingpower.Model.GiveAwayItem
+import com.example.gamingpower.Rest.GiveawaysService.Companion.GIVEAWAYS_PATH
+import com.google.android.material.internal.NavigationMenu
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
+import java.util.jar.Attributes
 
 interface GiveawaysService {
 
@@ -15,6 +18,12 @@ interface GiveawaysService {
     suspend fun getGiveawaysByPlatform(
         @Query("platform") platform: String
     ): Response<List<GiveAwayItem>>
+
+    @GET(GIVEAWAYS_PATH)
+    suspend fun getGiveawaysById(
+        @Query("id") id : Attributes.Name
+    ): Response<List<GiveAwayItem>>
+
 
     companion object {
         const val BASE_URL = "https://www.gamerpower.com/api/"
