@@ -1,9 +1,11 @@
 package com.example.gamingpower.Model
 
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
 
+@Entity
 data class GiveAwayItem(
         @SerializedName("description")
         @Expose

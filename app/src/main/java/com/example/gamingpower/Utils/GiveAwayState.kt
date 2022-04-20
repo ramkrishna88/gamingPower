@@ -3,8 +3,8 @@ package com.example.gamingpower.Utils
 
 import com.example.gamingpower.Model.GiveAwayItem
 
-sealed class GiveawayState {
-    object LOADING : GiveawayState()
-    class SUCCESS<T>(val giveaways: T, isLocalData: Boolean = false) : GiveawayState()
-    class ERROR(val error: Throwable) : GiveawayState()
+sealed class GiveAwayState {
+    object LOADING : GiveAwayState()
+    class SUCCESS<T>(val GiveAwayItem: T, isLocalData: Boolean = false) : GiveAwayState()
+    class ERROR(val  error: Throwable) : GiveAwayState()
 }
