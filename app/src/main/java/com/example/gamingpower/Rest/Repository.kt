@@ -5,6 +5,7 @@ import com.example.gamingpower.Model.GiveAwayItem
 import com.example.gamingpower.Utils.PlatformType
 import com.example.gamingpower.Utils.SortType
 import retrofit2.Response
+import java.util.concurrent.Flow
 
 interface GiveawaysRepository {
     suspend fun getAllGiveaways(sortedBy: SortType): Response<List<GiveAwayItem>>

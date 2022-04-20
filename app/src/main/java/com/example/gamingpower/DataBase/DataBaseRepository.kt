@@ -16,23 +16,23 @@ class DatabaseRepositoryImpl(
     private val giveawaysDatabase: GiveawaysService
 ) : DatabaseRepository {
     override suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>) {
-        TODO("Not yet implemented")
+       return insertGiveaways(newGiveaways)
     }
 
     override suspend fun getAllGiveaways(): List<GiveAwayItem> {
-        TODO("Not yet implemented")
+        return getAllGiveaways()
     }
 
     override suspend fun getGiveawaysById(searchId: Int): GiveAwayItem {
-        TODO("Not yet implemented")
+        return getGiveawaysById(searchId)
     }
 
     override suspend fun getGiveawaysByPlatform(platform: String): List<GiveAwayItem> {
-        TODO("Not yet implemented")
+      return getGiveawaysByPlatform(String())
     }
 
     override suspend fun deleteGiveaways(giveaways: List<GiveAwayItem>) {
-        TODO("Not yet implemented")
+        return deleteGiveaways(giveaways)
     }
 
 }

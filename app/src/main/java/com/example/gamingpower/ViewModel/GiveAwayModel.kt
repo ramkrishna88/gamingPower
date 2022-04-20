@@ -13,17 +13,14 @@ import com.example.gamingpower.Utils.SortType
 import com.example.gamingpower.Utils.GiveAwayState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
+import javax.inject.Inject
 
 @HiltViewModel
-class GiveawaysViewModel(
+class GiveawaysViewModel @Inject constructor(
     private val Rest : GiveawaysRepository,
     private val databaseRepo: DatabaseRepository,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
-
-    init {
-        Log.d("GiveawaysViewModel", "REMODEL initialized")
-    }
 
     var platform: PlatformType = PlatformType.ANDROID
 

@@ -16,6 +16,7 @@ abstract class GiveawaysDatabase : RoomDatabase() {
 @Dao
 interface GiveawaysDAO {
 
+    @PrimaryKey
     @Insert(onConflict = REPLACE)
     suspend fun insertGiveaways(newGiveaways: List<GiveAwayItem>)
 
@@ -25,6 +26,7 @@ interface GiveawaysDAO {
     @Query("SELECT * FROM giveawayItem WHERE id = :searchId LIMIT 1")
     suspend fun getGiveawaysById(searchId: Int): GiveAwayItem
 
+    @PrimaryKey
     @Query("SELECT * FROM giveawayItem WHERE platforms = :platform")
     suspend fun getGiveawaysByPlatform(platform: String): List<GiveAwayItem>
 
