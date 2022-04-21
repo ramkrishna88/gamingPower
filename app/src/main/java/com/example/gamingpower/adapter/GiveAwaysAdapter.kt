@@ -33,6 +33,9 @@ class GiveawayAdapter(
         holder.bind(giveaways[position])
 
     override fun getItemCount(): Int = giveaways.size
+    fun setNewGiveaways(giveaways: List<GiveAwayItem>) {
+
+    }
 
 }
 

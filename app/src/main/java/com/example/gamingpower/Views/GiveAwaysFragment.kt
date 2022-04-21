@@ -21,7 +21,7 @@ class GiveawaysFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         binding.giveawaysRecycler.apply {
@@ -37,7 +37,7 @@ class GiveawaysFragment : BaseFragment() {
                 }
                 is GiveAwayState.SUCCESS<*> -> {
                     val giveaways = state.GiveAwayItem as List<GiveAwayState>
-                    giveawaysAdapter.setNewGiveaways(giveaways)
+                    giveawaysAdapter.getItemId(Int.MAX_VALUE)
                 }
                 is GiveAwayState.ERROR -> {
                     Toast.makeText(
