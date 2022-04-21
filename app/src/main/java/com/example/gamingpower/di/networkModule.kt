@@ -21,6 +21,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
+
 class NetworkModule {
 
     @Provides
@@ -39,10 +40,12 @@ class NetworkModule {
     fun providesOkHttpClient() = OkHttpClient
         .Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY })
+            level = HttpLoggingInterceptor.Level.BODY
+        })
         .connectTimeout(30,TimeUnit.SECONDS)
         .readTimeout(30,TimeUnit.SECONDS)
         .writeTimeout(30,TimeUnit.SECONDS)
+        .build()
 
     @Provides
     fun ProvideRepository(serviceApi: GiveawaysService): GiveawaysRepository =
