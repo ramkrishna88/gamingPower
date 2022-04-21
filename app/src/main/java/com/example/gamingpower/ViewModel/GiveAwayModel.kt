@@ -17,9 +17,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GiveawaysViewModel @Inject constructor(
-    private val Rest : GiveawaysRepository,
+    private val Rest: GiveawaysRepository,
     private val databaseRepo: DatabaseRepository,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) : ViewModel() {
 
     var platform: PlatformType = PlatformType.ANDROID

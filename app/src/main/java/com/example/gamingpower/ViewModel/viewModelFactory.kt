@@ -12,5 +12,9 @@ class ViewModelFactory @Inject constructor(
 ): ViewModelFactory.Factory{
 
     fun<T : GiveawaysViewModel?> create (modelClass: Class<T>) : GiveawaysViewModel {
-        return GiveawaysViewModel(repository,databaseRepository,coroutineDispatcher)
+        return GiveawaysViewModel(
+            repository,
+            databaseRepository,
+            coroutineDispatcher,
+        )
     }}
